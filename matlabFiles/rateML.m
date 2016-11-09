@@ -12,5 +12,5 @@ for j = 1:K
         reconsData(j,i) = reconsData(j,i-1)*(rates(j)^(timesDelta(i-1)));
     end
 end
-diff = sum(norm(data - reconsData) / N);
-%diff = sum(abs(data - reconsData) ./ abs(data)) / N;
+diff = sum(norm((data - reconsData).^2,2) / N); % Least squares
+%diff = sum(norm((data - reconsData),1)) / N; % Least absolute deviation

@@ -81,7 +81,7 @@ for h = 1:K
     plot(times,data(h,:), '-o','LineWidth',1.5)
     plot(times,reconsDataML(h,:),'--go','Color','r','LineWidth',1.5)
     plot(times,reconsDataBayes(h,:),'y-*','LineWidth',1.5)
-    legend(strcat('data with real rate =', num2str(rates(h))),strcat('reconstructed data with ML rate = ', num2str(bestRateML(h))),strcat('reconstructed data with Bayes rate = ', num2str(bestRateBayes(h))))
+    legend(strcat('data with real rate =', num2str(rates(h))),strcat('reconstructed data with Least Squares rate = ', num2str(bestRateML(h))),strcat('reconstructed data with Bayes rate = ', num2str(bestRateBayes(h))))
 end
 
 % MLCounter

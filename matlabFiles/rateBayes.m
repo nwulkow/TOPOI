@@ -44,10 +44,12 @@ for k = 1:length(bestand_range)
 end
 % Alle posteriors mit dem Bestands-Prior gewichten und den optimalen
 % rate-Wert rausfinden
-weightedPosteriors = (diag(prior_bestand(startingValue))*posteriors)';
-[maxes, argmaxes] = max(weightedPosteriors);
-[maxOfmaxes, argmaxOfmaxes] = max(maxes);
-result.optimal = X(argmaxes(argmaxOfmaxes),:)
+[max_pos, argmax_pos]= max(result.posterior);
+result.optimal = X(argmax_pos,:);
+% weightedPosteriors = (diag(prior_bestand(startingValue))*posteriors)';
+% [maxes, argmaxes] = max(weightedPosteriors);
+% [maxOfmaxes, argmaxOfmaxes] = max(maxes);
+% result.optimal = X(argmaxes(argmaxOfmaxes),:)
 
 %result.optimal = X(argmaxes(argmaxOfmaxes), argmaxOfmaxes);
 %X_posterior = max(max(diag(prior_bestand(optimal))*posteriors));
