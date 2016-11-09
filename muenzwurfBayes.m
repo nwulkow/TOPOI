@@ -2,7 +2,7 @@
 mu = 0.5;
 sigma = 0.1;
 range = 0:0.01:1;
-% P(theta)
+% P(theta) GIT COMMENT TEST
 prior_fh = @(x) normpdf(x,mu,sigma); % Prior fuer die W'keit, dass die Muenze Kopf zeigt
 prior = prior_fh(range);
 prior = prior / norm(prior,1);
