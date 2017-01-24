@@ -22,6 +22,8 @@ conditional_likelihood = conditional_likelihood / sum(sum((conditional_likelihoo
 % size(conditional_likelihood)
 % size(prior)
 % P(theta | y)
+size(conditional_likelihood)
+size(prior)
 posterior = conditional_likelihood .* prior;
 posterior = posterior / sum(sum((posterior)));
 % Ergebnis
